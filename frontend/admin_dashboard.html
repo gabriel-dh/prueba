@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard de Administrador</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <h2>Registros de Llegada de Empleados</h2>
+
+    <!-- Formulario para filtrar registros -->
+    <div class="filter-container">
+      <h3>Filtrar registros</h3>
+      <form id="filterForm">
+        <label for="employeeName">Filtrar por empleado:</label>
+        <input type="text" id="employeeName" name="employeeName" placeholder="Nombre de usuario">
+        
+        <label for="startDate">Fecha de inicio:</label>
+        <input type="date" id="startDate" name="startDate">
+        
+        <label for="endDate">Fecha de fin:</label>
+        <input type="date" id="endDate" name="endDate">
+        
+        <button type="submit">Filtrar</button>
+      </form>
+    </div>
+
+    <!-- Tabla para mostrar registros de asistencia -->
+    <table id="attendanceTable">
+      <thead>
+        <tr>
+          <th>Nombre de Usuario</th>
+          <th>Hora de Llegada</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Los registros se agregarán dinámicamente aquí -->
+      </tbody>
+    </table>
+
+    <!-- Gestión de empleados -->
+    <div class="employee-management">
+      <h3>Gestión de Empleados</h3>
+      <form id="employeeForm">
+        <input type="hidden" id="employeeId" name="employeeId">  <!-- Campo oculto para el ID del empleado -->
+      
+        <label for="username">Nombre de usuario:</label>
+        <input type="text" id="username" name="username" placeholder="Nombre de usuario" required>
+      
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+      
+        <label for="role">Rol:</label>
+        <select id="role" name="role">
+          <option value="employee">Empleado</option>
+          <option value="admin">Administrador</option>
+        </select>
+      
+        <button type="submit">Agregar/Actualizar Empleado</button>
+      </form>
+      
+      <h3>Lista de Empleados</h3>
+        <table id="employeeTable">
+         <thead>
+          <tr>
+           <th>Nombre de Usuario</th>
+           <th>Rol</th>
+           <th>Acciones</th>
+         </tr>
+       </thead>
+       <tbody>
+         <!-- Los empleados se cargarán dinámicamente aquí -->
+       </tbody>
+        </table>
+
+
+
+      <h3>Eliminar Empleado</h3>
+      <form id="deleteEmployeeForm">
+        <label for="deleteEmployeeId">ID de usuario:</label>
+        <input type="text" id="deleteEmployeeId" name="deleteEmployeeId" placeholder="ID del usuario">
+        
+        <button type="submit">Eliminar Empleado</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script> <!-- Código de las funciones principales -->
+  <script src="app3.js"></script>
+</body>
+</html>
